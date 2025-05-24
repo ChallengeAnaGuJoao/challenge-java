@@ -34,4 +34,9 @@ public class Medicamento {
     public void setPrincipioAtivo(String principioAtivo) {
         this.principioAtivo = principioAtivo;
     }
+
+    @Override
+    public String toString() {
+        return nome + " - Princípio ativo: " + principioAtivo;
+    }
 }

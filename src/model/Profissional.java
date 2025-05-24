@@ -39,4 +39,9 @@ public class Profissional {
     public void setEspecialidades(List<Especialidade> especialidades) {
         this.especialidades = especialidades;
     }
+
+    @Override
+    public String toString() {
+        return nome + " (" + tipo + ") - Especialidades: " + especialidades.get(0);
+    }
 }

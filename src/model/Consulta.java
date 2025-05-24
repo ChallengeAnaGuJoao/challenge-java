@@ -2,16 +2,19 @@ package model;
 import java.time.LocalDateTime;
 
 public abstract class Consulta {
-    private Long id;
-    private LocalDateTime dataHora;
-    private Profissional profissional;
-    private Paciente paciente;
+    protected Long id;
+    protected LocalDateTime dataHora;
+    protected Profissional profissional;
+    protected Paciente paciente;
+    protected Receita receita;
 
-    public Consulta(Long id, LocalDateTime dataHora, Profissional profissional, Paciente paciente) {
+    public Consulta(Long id, LocalDateTime dataHora, Profissional profissional, Paciente paciente,
+            Receita receita) {
         this.id = id;
         this.dataHora = dataHora;
         this.profissional = profissional;
         this.paciente = paciente;
+        this.receita = receita;
     }
     
     public Long getId() {
@@ -37,5 +40,16 @@ public abstract class Consulta {
     }
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+    public Receita getReceita() {
+        return receita;
+    }
+    public void setReceita(Receita receita) {
+        this.receita = receita;
+    }
+
+    @Override
+    public String toString() {
+        return "Paciente: " + paciente + "\nProfissional: " + profissional + "\nHorário: "+ dataHora +"\nReceita: " + receita;
     }
 }

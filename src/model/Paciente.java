@@ -39,4 +39,9 @@ public class Paciente {
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
+
+    @Override
+    public String toString() {
+        return nome + " (CPF: " + cpf + ") - Endereços: " + enderecos;
+    }
 }

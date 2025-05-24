@@ -47,4 +47,12 @@ public class Receita {
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
     }
+
+    public void adicionarPrescricao(Prescricao prescricao) {
+        prescricoes.add(prescricao);
+    }
+    @Override
+    public String toString() {
+        return "\nPrescrições: " + prescricoes + "\nObservações: " + observacoes;
+    }
 }
