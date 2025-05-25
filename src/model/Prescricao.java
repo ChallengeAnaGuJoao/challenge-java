@@ -15,6 +15,12 @@ public class Prescricao {
         this.observacoes = observacoes;
     }
     
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     public Medicamento getMedicamento() {
         return medicamento;
     }

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 public class ConsultaPresencial extends Consulta {
     private UnidadeHospitalar local;
+    private String sala;
 
     public ConsultaPresencial(Long id, LocalDateTime dataHora, Profissional profissional, Paciente paciente, Receita receita,
             UnidadeHospitalar local) {
@@ -11,6 +12,14 @@ public class ConsultaPresencial extends Consulta {
         this.local = local;
     }
 
+     public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+    
     public UnidadeHospitalar getLocal() {
         return local;
     }
