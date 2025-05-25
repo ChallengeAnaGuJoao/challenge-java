@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
@@ -30,14 +32,14 @@ public class App {
 
         System.out.println("--- Endereço do Paciente ---");
         System.out.print("Quantos endereços deseja cadastrar? ");
-        int qtd = Integer.parseInt(scanner.nextLine());
+        int qtd = parseInt(scanner.nextLine());
         List<Endereco> enderecos = new ArrayList<>();
 
         for (int i = 0; i < qtd; i++) {
             Endereco endereco = lerEndereco(scanner);
             enderecos.add(endereco);
         }
-        return new Paciente(1L, nome, cpf, enderecos);
+        return new Paciente(1, nome, cpf, enderecos);
     }
 
     private static Profissional cadastrarProfissional (Scanner scanner){
@@ -50,28 +52,28 @@ public class App {
         String nomeEspecialidade = scanner.nextLine();
 
         List<Especialidade> especialidades = new ArrayList<>();
-        especialidades.add(new Especialidade(3l, nomeEspecialidade));
+        especialidades.add(new Especialidade(3, nomeEspecialidade));
 
-        return new Profissional(2l,nome, tipo, especialidades);
+        return new Profissional(2,nome, tipo, especialidades);
     }
 
     private static Receita cadastrarReceita (Scanner scanner, Paciente paciente, Profissional profissional){
         List<Prescricao> prescricoes = new ArrayList<>();
         System.out.println("--- Receita ---");
         System.out.print("Quantos medicamentos deseja cadastrar? ");
-        int qtd = Integer.parseInt(scanner.nextLine());
+        int qtd = parseInt(scanner.nextLine());
 
         for (int i = 0; i < qtd; i++) {
-            Prescricao prescricao = cadastrarPrescricao(scanner, (long) i);
+            Prescricao prescricao = cadastrarPrescricao(scanner, i);
             prescricoes.add(prescricao);
         }
         System.out.print("Observações: ");
         String observacoes = scanner.nextLine();
 
-        return new Receita(1L, paciente, profissional, prescricoes, observacoes);
+        return new Receita(1, paciente, profissional, prescricoes, observacoes);
     }
 
-    private static Prescricao cadastrarPrescricao (Scanner scanner, Long id){
+    private static Prescricao cadastrarPrescricao (Scanner scanner, int id){
         Medicamento medicamento = cadastrarMedicamentos(scanner, id);
         System.out.print("Dosagem: ");
         String dosagem = scanner.nextLine();
@@ -82,7 +84,7 @@ public class App {
         return new Prescricao(id,medicamento, dosagem, frequencia, observacao);
     }
 
-    private static Medicamento cadastrarMedicamentos(Scanner scanner, Long id){
+    private static Medicamento cadastrarMedicamentos(Scanner scanner, int id){
         System.out.println("--- Medicamento ---");
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
@@ -94,19 +96,19 @@ public class App {
     private static Consulta cadastrarConsulta (Scanner scanner, Paciente paciente, Profissional medico, Receita receita){
         System.out.println("--- Consulta ---");
         System.out.print("Tipo de consulta (1 - Presencial | 2 - Teleconsulta): ");
-        int tipo = Integer.parseInt(scanner.nextLine());
+        int tipo = parseInt(scanner.nextLine());
 
         if (tipo == 1) {
             System.out.println("--- Endereço da Unidade Hospitalar ---");
             Endereco enderecoUnidade = lerEndereco(scanner);
             System.out.print("Nome da Unidade: ");
             String nomeUnidade = scanner.nextLine();
-            UnidadeHospitalar unidade = new UnidadeHospitalar(1l,nomeUnidade, enderecoUnidade);
-            return new ConsultaPresencial(1l,LocalDateTime.now(), medico, paciente, receita, unidade);
+            UnidadeHospitalar unidade = new UnidadeHospitalar(1,nomeUnidade, enderecoUnidade);
+            return new ConsultaPresencial(1,LocalDateTime.now(), medico, paciente, receita, unidade);
         } else {
-            System.out.print("Plataforma da teleconsulta: ");
-            String plataforma = scanner.nextLine();
-            return new TeleConsulta(1l, LocalDateTime.now(), medico, paciente, receita, plataforma);
+            System.out.print("Link da teleconsulta: ");
+            String link = scanner.nextLine();
+            return new TeleConsulta(1, LocalDateTime.now(), medico, paciente, receita, link);
         }
     }
 

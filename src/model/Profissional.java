@@ -3,22 +3,22 @@ package model;
 import java.util.List;
 
 public class Profissional {
-    private Long id;
+    private int id;
     private String nome;
     private String tipo;
     private List<Especialidade> especialidades;
     
-    public Profissional(Long id, String nome, String tipo, List<Especialidade> especialidades) {
+    public Profissional(int id, String nome, String tipo, List<Especialidade> especialidades) {
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
         this.especialidades = especialidades;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getNome() {

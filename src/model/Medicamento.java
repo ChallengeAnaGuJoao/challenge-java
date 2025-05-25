@@ -1,21 +1,21 @@
 package model;
 
 public class Medicamento {
-    private Long id;
+    private int id;
     private String nome;
     private String principioAtivo;
 
-    public Medicamento(Long id, String nome, String principioAtivo) {
+    public Medicamento(int id, String nome, String principioAtivo) {
         this.id = id;
         this.nome = nome;
         this.principioAtivo = principioAtivo;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

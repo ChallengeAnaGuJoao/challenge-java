@@ -1,21 +1,21 @@
 package model;
 
 public class UnidadeHospitalar {
-    private Long id;
+    private int id;
     private String nome;
     private Endereco endereco;
     
-    public UnidadeHospitalar(Long id, String nome, Endereco endereco) {
+    public UnidadeHospitalar(int id, String nome, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

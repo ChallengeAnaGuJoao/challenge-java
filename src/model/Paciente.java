@@ -3,22 +3,22 @@ package model;
 import java.util.List;
 
 public class Paciente {
-    private Long id;
+    private int id;
     private String nome;
     private String cpf;
     private List<Endereco> enderecos;
     
-    public Paciente(Long id, String nome, String cpf, List<Endereco> enderecos) {
+    public Paciente(int id, String nome, String cpf, List<Endereco> enderecos) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.enderecos = enderecos;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getNome() {

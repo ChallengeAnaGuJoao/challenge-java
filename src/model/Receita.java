@@ -3,14 +3,14 @@ package model;
 import java.util.List;
 
 public class Receita {
-    private Long id;
+    private int id;
     private Paciente paciente;
     private Profissional profissional;
     private List<Prescricao> prescricoes;
     private String observacoes;
     
-    public Receita(Long id, Paciente paciente, Profissional profissional, List<Prescricao> prescricoes,
-            String observacoes) {
+    public Receita(int id, Paciente paciente, Profissional profissional, List<Prescricao> prescricoes,
+                   String observacoes) {
         this.id = id;
         this.paciente = paciente;
         this.profissional = profissional;
@@ -18,10 +18,10 @@ public class Receita {
         this.observacoes = observacoes;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public Paciente getPaciente() {

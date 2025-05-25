@@ -1,17 +1,17 @@
 package model;
 
 public class Especialidade {
-    private Long id;
+    private int id;
     private String nome;
     
-    public Especialidade(Long id, String nome) {
+    public Especialidade(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getNome() {

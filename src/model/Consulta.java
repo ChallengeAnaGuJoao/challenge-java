@@ -2,13 +2,13 @@ package model;
 import java.time.LocalDateTime;
 
 public abstract class Consulta {
-    protected Long id;
+    protected int id;
     protected LocalDateTime dataHora;
     protected Profissional profissional;
     protected Paciente paciente;
     protected Receita receita;
 
-    public Consulta(Long id, LocalDateTime dataHora, Profissional profissional, Paciente paciente,
+    public Consulta(int id, LocalDateTime dataHora, Profissional profissional, Paciente paciente,
             Receita receita) {
         this.id = id;
         this.dataHora = dataHora;
@@ -17,10 +17,10 @@ public abstract class Consulta {
         this.receita = receita;
     }
     
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public LocalDateTime getDataHora() {

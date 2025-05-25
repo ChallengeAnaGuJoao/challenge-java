@@ -1,13 +1,13 @@
 package model;
 
 public class Prescricao {
-    private Long id;
+    private int id;
     private Medicamento medicamento;
     private String dosagem;
     private String frequencia;
     private String observacoes;
 
-    public Prescricao(Long id, Medicamento medicamento, String dosagem, String frequencia, String observacoes) {
+    public Prescricao(int id, Medicamento medicamento, String dosagem, String frequencia, String observacoes) {
         this.id = id;
         this.medicamento = medicamento;
         this.dosagem = dosagem;
@@ -15,10 +15,10 @@ public class Prescricao {
         this.observacoes = observacoes;
     }
     
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public Medicamento getMedicamento() {

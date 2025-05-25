@@ -6,8 +6,8 @@ public class ConsultaPresencial extends Consulta {
     private UnidadeHospitalar local;
     private String sala;
 
-    public ConsultaPresencial(Long id, LocalDateTime dataHora, Profissional profissional, Paciente paciente, Receita receita,
-            UnidadeHospitalar local) {
+    public ConsultaPresencial(int id, LocalDateTime dataHora, Profissional profissional, Paciente paciente, Receita receita,
+                              UnidadeHospitalar local) {
         super(id, dataHora, profissional, paciente, receita);
         this.local = local;
     }

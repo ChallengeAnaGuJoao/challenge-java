@@ -3,29 +3,29 @@ package model;
 import java.time.LocalDateTime;
 
 public class TeleConsulta extends Consulta {
-    private String plataforma;
+    private String linkAcesso;
 
-    public TeleConsulta(Long id, LocalDateTime dataHora, Profissional profissional, Paciente paciente, Receita receita,
-            String plataforma) {
+    public TeleConsulta(int id, LocalDateTime dataHora, Profissional profissional, Paciente paciente, Receita receita,
+                        String linkAcesso) {
         super(id, dataHora, profissional, paciente, receita);
-        this.plataforma = plataforma;
+        this.linkAcesso = linkAcesso;
     }
 
-    public String getPlataforma() {
-        return plataforma;
+    public String getLinkAcesso() {
+        return linkAcesso;
     }
 
-    public void setPlataforma(String plataforma) {
-        this.plataforma = plataforma;
+    public void setLinkAcesso(String linkAcesso) {
+        this.linkAcesso = linkAcesso;
     }
 
     @Override
     public void realizarConsulta() {
-        System.out.println("Teleconsulta realizada com " + profissional.getNome() + " pela plataforma " + plataforma);
+        System.out.println("Teleconsulta realizada com " + profissional.getNome() + " pelo link " + linkAcesso);
     }
 
     @Override
     public String toString() {
-        return super.toString() + "\nPlataforma: " + plataforma;
+        return super.toString() + "\nLink de acesso: " + linkAcesso;
     }
 }
