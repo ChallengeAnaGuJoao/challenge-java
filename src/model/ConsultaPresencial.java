@@ -19,6 +19,7 @@ public class ConsultaPresencial extends Consulta {
         this.local = local;
     }
 
+    @Override
     public void realizarConsulta() {
         System.out.println("Consulta presencial realizada com " + profissional.getNome() + " na unidade " + local.getNome());
     }

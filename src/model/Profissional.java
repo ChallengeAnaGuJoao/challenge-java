@@ -42,6 +42,6 @@ public class Profissional {
 
     @Override
     public String toString() {
-        return nome + " (" + tipo + ") - Especialidades: " + especialidades.get(0);
+        return nome + " (" + tipo + ") - Especialidades: " + especialidades;
     }
 }

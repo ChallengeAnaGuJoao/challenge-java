@@ -48,8 +48,10 @@ public abstract class Consulta {
         this.receita = receita;
     }
 
+    public abstract void realizarConsulta();
+
     @Override
     public String toString() {
-        return "Paciente: " + paciente + "\nProfissional: " + profissional + "\nHorário: "+ dataHora +"\nReceita: " + receita;
+        return "Paciente: " + paciente + "\nProfissional: " + profissional + "\nHorário: "+ dataHora +"\n*** RECEITA ***: " + receita;
     }
 }

@@ -1,12 +1,14 @@
 package model;
 
 public class Prescricao {
+    private Long id;
     private Medicamento medicamento;
     private String dosagem;
     private String frequencia;
     private String observacoes;
 
-    public Prescricao(Medicamento medicamento, String dosagem, String frequencia, String observacoes) {
+    public Prescricao(Long id, Medicamento medicamento, String dosagem, String frequencia, String observacoes) {
+        this.id = id;
         this.medicamento = medicamento;
         this.dosagem = dosagem;
         this.frequencia = frequencia;
@@ -40,6 +42,6 @@ public class Prescricao {
 
     @Override
     public String toString() {
-        return "Medicamento: " + medicamento + " | Dosagem: " + dosagem + " | Frequência: " + frequencia + " | Observações: " + observacoes;
+        return "\nMedicamento: " + medicamento + " | Dosagem: " + dosagem + " | Frequência: " + frequencia + " | Observações: " + observacoes;
     }
 }

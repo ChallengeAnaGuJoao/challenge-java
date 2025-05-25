@@ -17,6 +17,7 @@ public class Receita {
         this.prescricoes = prescricoes;
         this.observacoes = observacoes;
     }
+
     public Long getId() {
         return id;
     }
